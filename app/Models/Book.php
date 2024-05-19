@@ -14,4 +14,5 @@ class Book extends Model
         'isbn',
         'value'
     ];
+
 }

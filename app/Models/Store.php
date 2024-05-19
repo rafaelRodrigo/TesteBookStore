@@ -13,4 +13,9 @@ class Store extends Model
         'address'
 
     ];
+
+    public function storebook()
+    {
+        return $this->belongsToMany(StoreBook::class);
+    }
 }

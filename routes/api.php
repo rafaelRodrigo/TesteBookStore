@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\ApiController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\StoreBookController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -40,6 +41,15 @@ Route::group([
         Route::post("/book", "post");
         Route::put("/book/{id}", "put");
         Route::delete("/book/{id}","delete");
+    });
+
+    /***** BOOK ******/
+    Route::controller(StoreBookController::class)->group(function () {
+        Route::get("/storesbook", "getAll");
+        Route::get("/storesbook/{id}", "get");
+        Route::post("/storesbook", "post");
+        Route::put("/storesbook/{id}", "put");
+        Route::delete("/storesbook/{id}","delete");
     });
 
 
